@@ -10,7 +10,7 @@
 
     private $name     = 'li3_airbrake - Airbrake plugin for Lithium';
     private $version  = '0.1';
-    private $host     = 'http://api.airbrake.io';
+    private $host     = 'api.airbrake.io';
     private $resource = '/notifier_api/v2/notices';
     private $repo     = 'https://github.com/gary-rafferty/li3_airbrake';
 
