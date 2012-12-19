@@ -20,13 +20,32 @@
 
     public function handle($exception,$params) {
       $exception = new Error((object) $exception);
+
       $payload = new Payload($exception,$this->config());
 
-      $this->notify($payload);
+      $xml = $payload->toXML();
+
+      $this->notify($xml);
     }
 
-    private function notify($payload) {
+    private function notify($xml) {
+      $fp = fsockopen($this->host,80);
+       if(!$fp) {
+        return false;
+      }
 
+      $http = "POST {$this->resource} HTTP/1.1\r\n";
+      $http.= "Host: {$this->host}\r\n";
+      $http.= "User-Agent: li3_airbrake\r\n";
+      $http.= "Content-Type: application/x-www-form-urlencoded\r\n";
+      $http.= "Connection: close\r\n";
+      $http.= "Content-Length: ".strlen($xml)."\r\n\r\n";
+      $http.= $xml;
+
+      fwrite($fp, $http);
+      fclose($fp);
+
+      return true;
     }
 
     private function config() {
