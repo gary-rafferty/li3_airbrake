@@ -1,4 +1,5 @@
 <?php
+  namespace li3_airbrake\models;
 
   class Error {
 
