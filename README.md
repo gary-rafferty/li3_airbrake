@@ -8,7 +8,7 @@ Add the project as a git submodule in your li3 app/libraries directory
 
 ```bash
 
-git submodule add git://github.com/gary-rafferty/li3_airbrake.git libraries/li3_airbrake
+git clone git://github.com/gary-rafferty/li3_airbrake.git app/libraries/li3_airbrake
 
 ```
 
