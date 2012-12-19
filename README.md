@@ -4,7 +4,7 @@
 
 ### Installation
 
-Add the project as a git submodule in your li3 app/libraries directory
+Clone the project into your li3 app/libraries directory
 
 ```bash
 
