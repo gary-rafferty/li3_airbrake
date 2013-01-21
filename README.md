@@ -18,7 +18,7 @@ and then load it by adding the following to you app/config/bootstrap/libraries.p
 
 <?php
 
-  Libraries::add('li3_airbrake', array('apikey' => '[AIRBRAKE-API-KEY]'))
+  Libraries::add('li3_airbrake', array('apikey' => '[AIRBRAKE-API-KEY]'));   
 
 ?>
 
