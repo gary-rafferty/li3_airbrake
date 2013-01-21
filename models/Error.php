@@ -15,10 +15,10 @@
     public function __construct($exception) {
       $this->exception = get_class($exception->exception);
       $this->message = $exception->message;
-      $this->request = $exception->trace[0]['args'][0]->request;
-      $this->url = $exception->trace[0]['args'][0]->request->url;
-      $this->controller = $exception->trace[0]['args'][0]->request->controller;
-      $this->action = $exception->trace[0]['args'][0]->request->action;
+      $this->request = $exception->trace[0]['args'][1]['request'];
+      $this->url = $exception->trace[0]['args'][1]['request']->url;
+      $this->controller = $exception->trace[0]['args'][1]['request']->controller;
+      $this->action = $exception->trace[0]['args'][1]['request']->action;
       foreach($exception->trace as $trace) {
         $this->trace[] = array(
           $trace['file'],
