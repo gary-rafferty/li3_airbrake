@@ -50,8 +50,6 @@
       $env->addChild('environment-name','production');
       $env->addChild('app-version','1.0');
 
-      $doc->asXML('/home/gary/xml.xml');
-
       return $doc->asXML();
     }
   }
